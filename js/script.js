@@ -1,8 +1,12 @@
 $(document).ready(function() {
 
-    for (var i = 1; i < 719; i++) {
+    /*for (var i = 1; i < 719; i++) {
         var pokePic = $("<img src=http://pokeapi.co/media/img/" + i + ".png id=" + i + ">");
         $('div.pokemon').append(pokePic);
+    }*/
+    for (var i = 1; i < 73; i++) {
+        var pokePic = $("<img src=http://pokeapi.co/media/img/" + i + ".png id=" + i + ">");
+        $('#' + i).append(pokePic);
     }
 
     $('img', this).click(function() {

@@ -1,11 +1,13 @@
-div.pokemon  {
+/*div.pokemon  {
     width: 900px;
-     background-color: LightGreen;
-}
+    height: 100%;
+    background-color: LightGreen;
+}*/
 
 div.pokedex {
     border-sizing: border-box;
-    width: 290px;
+    max-width: 40%;
+    min-width:40%;
     height: 500px;
     border: 5px solid black;
     padding: 8px;
@@ -24,6 +26,11 @@ div.pokedex img {
     float: left;
 }
 
+div.pokemon img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 div.pokemon, div.pokedex {
     display: inline-block;
     vertical-align: top;
@@ -37,4 +44,14 @@ body {
 
 h1 {
     text-decoration: underline;
+}
+
+#title{
+    width: 500px;
+}
+
+.container{
+    float:right;
+    max-width: 50%;
+    min-width: 50%;
 }
