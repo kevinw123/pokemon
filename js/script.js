@@ -9,6 +9,12 @@ $(document).ready(function() {
         $('#' + i).append(pokePic);
     }
 
+    for(var i = 1; i < 5; i++){
+        var webAddress2 = "http://pokeapi.co/api/v1/pokemon/" + i;
+        $.get(webAddress2, function(res){
+            $("#name" + i).text(res.name);
+        },'json');
+    }
     $('img', this).click(function() {
 
         var uniqueId = $(this).attr('id');
