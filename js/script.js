@@ -1,5 +1,7 @@
 $(document).ready(function() {
-
+    /*for(var j = 1; j < 5; j++){
+        $("#name" + j).text("HELLO");
+    }*/
     /*for (var i = 1; i < 719; i++) {
         var pokePic = $("<img src=http://pokeapi.co/media/img/" + i + ".png id=" + i + ">");
         $('div.pokemon').append(pokePic);
@@ -9,12 +11,15 @@ $(document).ready(function() {
         $('#' + i).append(pokePic);
     }
 
-    for(var i = 1; i < 5; i++){
-        var webAddress2 = "http://pokeapi.co/api/v1/pokemon/" + i;
-        $.get(webAddress2, function(res){
-            $("#name" + i).text(res.name);
-        },'json');
-    }
+  for (var j = 1; j < 152; j++) {
+    (function(index) {
+      var webAddress2 = "http://pokeapi.co/api/v1/pokemon/" + index;
+      $.getJSON(webAddress2, function(data) {
+        $("#name" + index).text(data.name);
+      });
+    }(j))
+  }
+
     $('img', this).click(function() {
 
         var uniqueId = $(this).attr('id');

@@ -39,7 +39,6 @@ div.pokemon, div.pokedex {
 
 body {
     padding: 40px;
-    background-color: red;
 }
 
 h1 {
@@ -54,11 +53,6 @@ h1 {
     float:right;
     max-width: 50%;
     min-width: 50%;
-}
-
-#name1{
-    font-size: 10px;
-    color: black;
 }
 
 body{ 
