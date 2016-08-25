@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    for (var i = 1; i < 152; i++) {
+    for (var i = 1; i <152; i++) {
         var pokePic = $("<img src=http://pokeapi.co/media/img/" + i + ".png id=" + i + ">");
         $('#' + i).append(pokePic);
     }
@@ -19,7 +19,6 @@ $(document).ready(function() {
         var uniqueId = $(this).attr('id');
 
         var webAddress = "http://pokeapi.co/api/v1/pokemon/" + uniqueId;
-
         var types = " ";
         var abilities = " ";
         $.get(webAddress, function(res) {
@@ -33,20 +32,20 @@ $(document).ready(function() {
         $.get(webAddress, function(res) {
 
             $('div.pokedex').html(
-                "<h1>" + res.name + "</h1>" +
-                "<img src=http://pokeapi.co/media/img/" + uniqueId + ".png>" +
-                "<h4>Types:</h4>" +
+                "<h1 align='center'>" + res.name + "</h1>" +
+                "<div align='center'><img src=http://pokeapi.co/media/img/" + uniqueId + ".png></div>" +
+                "<h4 align='center'>Types:</h4>" +
                 "<ul>" +
                 types + 
                 "</ul>" + 
-                "<h4>Abilities:</h4>" +
+                "<h4 align='center'>Abilities:</h4>" +
                 "<ul>" +
                 abilities +
                 "</ul>" + 
-                "<h4>Height:</h4>" +
-                "<p>" + res.height + "</p>" +
-                "<h4>Weight:</h4>" +
-                "<p>" + res.weight + "</p>"
+                "<h4 align='center'>Height:</h4>" +
+                "<p align='center'>" + res.height + "</p>" +
+                "<h4 align='center'>Weight:</h4>" +
+                "<p align='center'>" + res.weight + "</p>"
             );
 
         }, 'json');
