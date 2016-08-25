@@ -57,3 +57,8 @@ body{
    background-size: cover;
    background-color: #87CEFA;
  }
+
+ .name{
+    font-weight: bold;
+    font-size: 20px;
+ }
