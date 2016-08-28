@@ -53,16 +53,22 @@
 });
 */
 $(document).ready(function() {
-    $(function(){
-    $("#modal-background, #modal-close, img").click(function() {
-        $("#modal-content, #modal-background").toggleClass("active");
-        //var uniqueId = $(this).attr('id');
-        //$('#modalImg').prepend("<img src='img/" + uniqueId + ".png'/>"); 
+    var toggle = true;
+    $(function() {
+        $("#modal-background, #modal-close, img").click(function() {
+            $("#modal-content, #modal-background").toggleClass("active");
+            if(toggle === true){
+                var uniqueId = $(this).attr('id');
+                $('#icon').attr("src","img/" + uniqueId + ".png");
+                toggle = false;
+            }else{
+                toggle = true;
+            }
+        });
     });
-});
     var pokemonLength = 10;
-    for(var i = 0; i < pokemonLength; i++){
-        $('#' + i).prepend("<img src='img/" + i+ ".png' id=" + i + ">"); 
+    for (var i = 0; i < pokemonLength; i++) {
+        $('#' + i).prepend("<img src='img/" + i + ".png' id=" + i + ">");
     }
     for (var j = 1; j < pokemonLength; j++) {
         (function(index) {
