@@ -32,6 +32,7 @@ body{
   height: 60px;
 }
 
+/*Modal*/
 #modal-background {
     display: none;
     position: fixed;
@@ -56,7 +57,7 @@ body{
     -webkit-box-shadow: 0 0 20px 0 #222;
     -moz-box-shadow: 0 0 20px 0 #222;
     display: none;
-    height: 240px;
+    height: 500px;
     left: 50%;
     margin: -120px 0 0 -160px;
     padding: 10px;
@@ -69,3 +70,32 @@ body{
 #modal-background.active, #modal-content.active {
     display: block;
 }​
+
+
+/*Modal content*/
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .marketing
+  {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.marketing{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+p{
+    font-size: 15px;
+}

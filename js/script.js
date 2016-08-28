@@ -57,11 +57,17 @@ $(document).ready(function() {
     $(function() {
         $("#modal-background, #modal-close, img").click(function() {
             $("#modal-content, #modal-background").toggleClass("active");
-            if(toggle === true){
+            if (toggle === true) {
                 var uniqueId = $(this).attr('id');
-                $('#icon').attr("src","img/" + uniqueId + ".png");
+                var webAddress = "http://pokeapi.co/api/v1/pokemon/" + uniqueId;
+                $('#icon').attr("src", "img/" + uniqueId + ".png");
                 toggle = false;
-            }else{
+                $.getJSON(webAddress, function(data) {
+                    $("#modalName").text(data.name);
+                    $("#pokeHeight").text(data.height);
+                    $("#pokeWeight").text(data.weight);
+                });
+            } else {
                 toggle = true;
             }
         });
