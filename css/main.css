@@ -57,7 +57,7 @@ body{
     -webkit-box-shadow: 0 0 20px 0 #222;
     -moz-box-shadow: 0 0 20px 0 #222;
     display: none;
-    height: 500px;
+    height: 520px;
     left: 50%;
     margin: -120px 0 0 -160px;
     padding: 10px;
@@ -98,4 +98,8 @@ body{
 
 p{
     font-size: 15px;
+}
+
+h4{
+    font-weight: bold;
 }

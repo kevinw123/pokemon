@@ -60,12 +60,25 @@ $(document).ready(function() {
             if (toggle === true) {
                 var uniqueId = $(this).attr('id');
                 var webAddress = "http://pokeapi.co/api/v1/pokemon/" + uniqueId;
+                var types = "";
+                var abilities = "";
                 $('#icon').attr("src", "img/" + uniqueId + ".png");
                 toggle = false;
                 $.getJSON(webAddress, function(data) {
                     $("#modalName").text(data.name);
                     $("#pokeHeight").text(data.height);
                     $("#pokeWeight").text(data.weight);
+                    for (var j = 0; j < data.types.length; j++) {
+                        if (j == 0) {
+                            types += data.types[j].name;
+                            abilities += data.abilities[j].name;
+                        } else {
+                            types += "," + data.types[j].name;
+                            abilities += "," + data.abilities[j].name;
+                        }
+                    }
+                    $("#pokeType").text(types);
+                    $("#pokeAbility").text(abilities);
                 });
             } else {
                 toggle = true;
