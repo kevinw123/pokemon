@@ -53,9 +53,16 @@
 });
 */
 $(document).ready(function() {
-    var pokemonLength = 152;
+    $(function(){
+    $("#modal-background, #modal-close, img").click(function() {
+        $("#modal-content, #modal-background").toggleClass("active");
+        //var uniqueId = $(this).attr('id');
+        //$('#modalImg').prepend("<img src='img/" + uniqueId + ".png'/>"); 
+    });
+});
+    var pokemonLength = 10;
     for(var i = 0; i < pokemonLength; i++){
-        $('#' + i).prepend("<img src='img/" + i+ ".png'/>"); 
+        $('#' + i).prepend("<img src='img/" + i+ ".png' id=" + i + ">"); 
     }
     for (var j = 1; j < pokemonLength; j++) {
         (function(index) {
@@ -65,4 +72,5 @@ $(document).ready(function() {
             });
         }(j))
     }
+
 });
