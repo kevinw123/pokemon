@@ -53,10 +53,11 @@
 });
 */
 $(document).ready(function() {
-    for(var i = 0; i < 13; i++){
+    var pokemonLength = 152;
+    for(var i = 0; i < pokemonLength; i++){
         $('#' + i).prepend("<img src='img/" + i+ ".png'/>"); 
     }
-    for (var j = 1; j < 13; j++) {
+    for (var j = 1; j < pokemonLength; j++) {
         (function(index) {
             var webAddress2 = "http://pokeapi.co/api/v1/pokemon/" + index;
             $.getJSON(webAddress2, function(data) {
