@@ -1,7 +1,7 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 
     for (var i = 1; i <152; i++) {
-        var pokePic = $("<img src=http://pokeapi.co/media/img/" + i + ".png id=" + i + ">");
+        var pokePic = $("<img src=img/" + i + ".png id=" + i + ">");
         $('#' + i).append(pokePic);
     }
 
@@ -50,4 +50,18 @@ $(document).ready(function() {
 
         }, 'json');
     });
+});
+*/
+$(document).ready(function() {
+    for(var i = 0; i < 13; i++){
+        $('#' + i).prepend("<img src='img/" + i+ ".png'/>"); 
+    }
+    for (var j = 1; j < 13; j++) {
+        (function(index) {
+            var webAddress2 = "http://pokeapi.co/api/v1/pokemon/" + index;
+            $.getJSON(webAddress2, function(data) {
+                $("#name" + index).text(data.name);
+            });
+        }(j))
+    }
 });
